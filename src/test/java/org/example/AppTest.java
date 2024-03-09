@@ -50,6 +50,7 @@ public class AppTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement toolbarTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.androidsample.generalstore:id/toolbar_title")));
         Assert.assertEquals(toolbarTitle.getText(), "Products");
+        driver.findElement(By.xpath("//*[@text='Air Jordan 4 Retro']/following-sibling::android.widget.LinearLayout/android.widget.TextView[@text=\"ADD TO CART\"]")).click();
         WebElement count = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.androidsample.generalstore:id/counterText")));
         Assert.assertEquals(count.getText(), "1");
         driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
